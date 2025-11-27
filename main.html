@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magic Tower</title>
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+<!-- Character -->
+<div id="role">
+  Your role is:
+  <input type="text" id="nameInput" placeholder="Enter your name: ">
+  <button id="submitButton">Submit</button>
+</div>
+<!-- Map Build -->
+<div class="game">
+    <div id="map" class="map"></div>
+</div>
+<!--Game Inside -->
+<div id="game">
+  <h1 id="roleName">Continue</h1>
+  <!-- Status Panel -->
+  <div id="status">
+    <span class="label">Level: </span>
+    <span class="value" id="level">0</span>
+    <span class="label">XPNeeded for next level: </span>
+    <span class="value" id="needed">0</span>
+    <span class="label">HP: </span>
+    <span class="value" id="hp">0</span>
+    <span class="label">MP: </span>
+    <span class="value" id="mp">0</span>
+    <span class="label">Attack: </span>
+    <span class="value" id="atk">0</span>
+    <span class="label">Defense: </span>
+    <span class="value" id="def">0</span>
+    <span class="label">YellowKey: </span>
+    <span class="value" id="yellowKey">0</span>
+    <span class="label">BlueKey: </span>
+    <span class="value" id="blueKey">0</span>
+    <span class="label">Money: </span>
+    <span class="value" id="money">0</span>
+  </div>
+  <!-- Shop -->
+    <div id="shop" style="display: none">
+        <h2>Store</h2>
+        <ul class="shop-list">
+            <li class="shop-item"
+                onmouseover="showEffect('ATK +3')"
+                onmouseout="hideEffect()"
+                onclick="buy('Arcane Blade Charm')">
+                Arcane Blade Charm
+            </li>
+            <li class="shop-item"
+                onmouseover="showEffect('DEF +3')"
+                onmouseout="hideEffect()"
+                onclick="buy('Aegis Guard Talisman')">
+                Aegis Guard Talisman
+            </li>
+            <li class="shop-item"
+                onmouseover="showEffect('HP +100')"
+                onmouseout="hideEffect()"
+                onclick="buy('Crimson Life Elixir')">
+                Crimson Life Elixir
+            </li>
+            <li class="shop-item"
+                onmouseover="showEffect('ATK +1 & DEF +1')"
+                onmouseout="hideEffect()"
+                onclick="buy('Unity Rune Charm')">
+                Unity Rune Charm
+            </li>
+            <li class="shop-item"
+                onmouseover="showEffect('Opens Blue Doors')"
+                onmouseout="hideEffect()"
+                onclick="buy('Azure Rune Key')">
+                Azure Rune Key
+            </li>
+            <li class="shop-item"
+                onmouseover="showEffect('Opens Yellow Doors')"
+                onmouseout="hideEffect()"
+                onclick="buy('Sunlit Sigil Key')">
+                Sunlit Sigil Key
+            </li>
+        </ul>
+
+        <div id="itemEffect">Hover an item to see its effect.</div>
+    </div>
+  <!-- Log Panel -->
+  <div id="log" class="log"></div>
+  <!-- In case the user don't know how to play -->
+  <div class="hint">
+    Instructions:<br>
+    Control: Use WASD or arrow keys on the keyboard to move.<br>
+    Monster: Click a monster to view its status.<br>
+    Battle: Walk into a monster to start a battle.<br>
+    Shop: Stand on a shop to open the shop automatically.<br>
+  </div>
+  <!-- Quest panel -->
+  <div id="questPanel" class="quest-panel" style="display:none;">
+      <div class="quest-title">Current Quest: </div>
+      <div id="questText" class="quest-text">No active quest.</div>
+  </div>
+  <!-- Dinosaur popup -->
+  <div id="afterDoor" class="Hidden">
+      <img src="imgProj/D.gif" alt="Dinosaur" class="dinosaur">
+      A hidden dinosaur awakens behind the door!TAT
+      <button id="DinosaurButton">Fight!</button>
+  </div>
+</div>
+    <script src="GameElement.js"></script>
+    <script src="Player.js"></script>
+    <script src="Maze.js"></script>
+    <script src="Enemy.js"></script>
+    <script src="Shop.js"></script>
+    <script src="Move.js"></script>
+    <script src="Main.js"></script>
+</body>
+</html>
