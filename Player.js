@@ -53,7 +53,7 @@ function statusUpdate() {
     // Level & XP info from totalExp
     const info = getLevelInfo(player.totalExp);
     player.level = info.level;
-    document.getElementById("roleName").textContent = player.name || "Continue";
+    document.getElementById("nameInput").textContent = player.name;
     document.getElementById("level").textContent = `${info.level}`;
     document.getElementById("needed").textContent = `${info.xpNeeded}`;
     document.getElementById("hp").textContent = player.hp;
@@ -63,7 +63,7 @@ function statusUpdate() {
     document.getElementById("yellowKey").textContent = player.yellowKey;
     document.getElementById("blueKey").textContent = player.blueKey;
     document.getElementById("money").textContent = player.money;
-    const questBox = document.getElementById("quest");
+    const questBox = document.getElementById("questText");
     if (!questBox) return;
     if (!currQuest) {
         questBox.style.display = "none";
