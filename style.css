@@ -11,18 +11,14 @@ body {
     align-items: flex-start;
     padding: 20px;
     color: #f9f3e6;
-    /* 暗色魔法风背景 */
     background: radial-gradient(circle at top, #3b2b40 0, #151019 40%, #060608 100%);
     font-family: "Georgia", "Times New Roman", serif;
 }
-
-/* 让整个游戏区域像一本魔法图鉴 */
 .game,
 #game {
     position: relative;
 }
 
-/* ===== 顶部：角色输入区域 ===== */
 #role {
     position: fixed;
     top: 16px;
@@ -71,13 +67,17 @@ body {
     box-shadow: 0 0 8px rgba(222, 196, 129, 0.7);
 }
 
-/* ===== 整体布局：左边地图，右边状态 + 商店 + 日志 + hint ===== */
 .game {
-    margin-top: 60px; /* 避开角色输入条 */
+    margin-top: 60px;
     margin-right: 32px;
 }
-
-/* ===== 地图区域（JRPG 俯视 13x13） ===== */
+#game {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 420px;
+    margin-top: 60px;   
+}
 #map.map {
     display: grid;
     grid-template-columns: repeat(13, 48px);
@@ -92,7 +92,6 @@ body {
             0 0 40px rgba(222, 196, 129, 0.2);
 }
 
-/* 每一个瓦片 */
 .tile {
     width: 48px;
     height: 48px;
@@ -103,14 +102,11 @@ body {
     transform-origin: center center;
 }
 
-/* 轻微“凸起”，更像棋盘 / 战棋 */
 .tile:hover {
     transform: scale(1.04);
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.18);
     filter: brightness(1.05);
 }
-
-/* ===== 不同 tile 类型的一些额外效果（边框/光晕） ===== */
 
 .wall {
     filter: brightness(0.7);
@@ -120,13 +116,10 @@ body {
     filter: brightness(1);
 }
 
-/* 主角：柔和金色光晕（艾尔登法环角色光） */
 .hero {
     box-shadow: 0 0 12px rgba(255, 223, 140, 0.9);
     border-radius: 8px;
 }
-
-/* 敌人：稍带红/紫光 */
 .slime-red,
 .slime-green,
 .bat,
@@ -155,7 +148,6 @@ body {
     box-shadow: 0 0 14px rgba(255, 150, 80, 0.9);
     border-radius: 10px;
 }
-/* 宝石/道具：蓝/红光 */
 .ruby,
 .sapphire {
     border-radius: 8px;
@@ -164,43 +156,24 @@ body {
 .sapphire {
     box-shadow: 0 0 12px rgba(80, 190, 255, 0.9);
 }
-
-/* 楼梯：金色光圈 → 传送感 */
 .stair {
     box-shadow: 0 0 12px rgba(242, 211, 123, 0.9);
     border-radius: 10px;
 }
-
-/* 商店：绿色魔法光 */
 .shop {
     box-shadow: 0 0 14px rgba(72, 255, 174, 0.8);
     border-radius: 10px;
 }
-
-/* 装饰物 */
 .decor {
     filter: brightness(0.95);
 }
 
-/* ===== 右侧：游戏状态、商店、日志、提示 ===== */
 #game {
     display: flex;
     flex-direction: column;
     gap: 12px;
     min-width: 420px;
 }
-
-/* 标题/角色名，类似魔法章节标题 */
-#roleName {
-    font-size: 24px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 8px;
-    text-shadow: 0 0 10px rgba(222, 196, 129, 0.7);
-}
-
-/* ===== 状态面板：类似 JRPG 状态栏 + 霍格沃茨卷轴边框 ===== */
 #status {
     background: linear-gradient(135deg, rgba(22, 16, 25, 0.95), rgba(40, 28, 35, 0.95));
     border-radius: 16px;
@@ -223,7 +196,6 @@ body {
     margin-right: 10px;
 }
 
-/* ===== 商店 ===== */
 #shop {
     margin-top: 4px;
     background: radial-gradient(circle at top, rgba(26, 19, 32, 0.98), rgba(8, 5, 12, 0.98));
@@ -243,7 +215,6 @@ body {
     color: #b5fdd7;
 }
 
-/* 列表本身 */
 .shop-list {
     list-style: none;
     display: grid;
@@ -252,7 +223,6 @@ body {
     margin-bottom: 8px;
 }
 
-/* 每个商品：像艾尔登法环物品条 + JRPG 菜单 */
 .shop-item {
     font-size: 13px;
     padding: 6px 8px;
@@ -272,7 +242,6 @@ body {
     background: linear-gradient(135deg, rgba(30, 73, 49, 0.95), rgba(25, 57, 41, 0.95));
 }
 
-/* 商品效果说明 */
 #itemEffect {
     font-size: 12px;
     text-align: center;
@@ -281,7 +250,6 @@ body {
     border-top: 1px dashed rgba(163, 241, 205, 0.6);
 }
 
-/* ===== 日志区域：战斗记录 / 提示（像系统日志 + 卷轴）===== */
 #log {
     margin-top: 8px;
     min-height: 120px;
@@ -295,7 +263,6 @@ body {
     font-size: 12px;
 }
 
-/* 每条日志 */
 #log div {
     margin-bottom: 4px;
     line-height: 1.3;
@@ -305,15 +272,6 @@ body {
     color: #fff0c4;
     text-shadow: 0 0 6px rgba(255, 238, 188, 0.8);
 }
-
-#log img.log-img {
-    display: block;
-    margin: 4px auto;
-    width: 64px;
-    height: 64px;
-    image-rendering: pixelated;
-}
-
 .hint {
     margin-top: 6px;
     font-size: 12px;
