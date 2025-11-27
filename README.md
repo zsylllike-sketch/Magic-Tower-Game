@@ -19,6 +19,11 @@ The core gameplay includes:
 
 - Interactive narrative events such as the Trial Door
 
+## Short Cut
+
+<img width="1170" height="715" alt="main" src="https://github.com/user-attachments/assets/8ebf669d-d19b-4432-a19f-983f9082afc5" />
+<img width="428" height="296" alt="popup" src="https://github.com/user-attachments/assets/1644962d-3305-4bb4-bd6b-cee3f4f29fc9" />
+
 ## Contributing
 
 Pull requests are welcome. If you're planning a major change (e.g., rewriting battle mechanics or adding new floors),
