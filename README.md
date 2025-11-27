@@ -24,8 +24,8 @@ Save Includes:
 - Quests
 - Game start flag
 - Continue Behavior:
-  - If so save exists: No saved game found. Please start a new game first! TAT
-  - If save exists: You return. The tower remembers.
+  - If so save exists: 'No saved game found. Please start a new game first! TAT'
+  - If save exists: 'You return. The tower remembers.'
 
 ## Short Cut
 
