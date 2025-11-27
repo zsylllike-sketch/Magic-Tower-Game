@@ -14,6 +14,19 @@ classic dungeon exploration, battle encounters, quests, and an interactive shop 
 - Psychological Choice Doors: Some doors force the player to make a choice via dialogue.
 - Special event with a popup modal.
 
+## Save and Load
+
+Game progress is stored using localStorage.
+Save Includes: 
+- Player stats
+- Current floor number
+- Floor states (items picked up / enemies defeated)
+- Quests
+- Game start flag
+- Continue Behavior:
+  - If so save exists: No saved game found. Please start a new game first! TAT
+  - If save exists: You return. The tower remembers.
+
 ## Short Cut
 
 <img width="1170" height="715" alt="main" src="https://github.com/user-attachments/assets/8ebf669d-d19b-4432-a19f-983f9082afc5" />
