@@ -3,21 +3,16 @@
 Magic Tower is a lightweight browser-based RPG featuring tile-based movement, 
 classic dungeon exploration, battle encounters, quests, and an interactive shop system. The project is written in HTML, CSS, and JavaScript.
 
-## Usage
+## Game Overview
 
-Game Structure Overview
-
-The core gameplay includes:
-
-- Movement on a 2D tile-based map
-
-- Random encounters and scripted battles
-
-- A quest system (e.g., “Slay 3 Skeletons”)
-
-- A shop with purchasable upgrades
-
-- Interactive narrative events such as the Trial Door
+- Goal: Climb the magic tower floor by floor, defeat enemies, and survive using limited resources(HP/MP, keys, money).
+- Player Status: HP, MP, Attack, Defense, Keys, Money, Level and XP
+- Map: The tower is designed as 13*13 tile maps per floor.
+- Battle: Walking into a monster to start a battle. If HP reaches 0, the player dies and the game ends.
+- Shop: Standing on a shop tile automatically opens the store.
+- Quest: Doors may trigger a quest.
+- Psychological Choice Doors: Some doors force the player to make a choice via dialogue.
+- Special event with a popup modal.
 
 ## Short Cut
 
